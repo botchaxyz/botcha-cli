@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "botcha-cli"
+version = "0.0.1"
+description = "CLI for Botcha — the reverse CAPTCHA for AI agents"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [
+    { name = "Botcha", email = "hello@botcha.xyz" }
+]
+keywords = ["botcha", "captcha", "reverse-captcha", "ai-agent", "verification", "cli"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Homepage = "https://botcha.xyz"
+Repository = "https://github.com/arguedotfun/botcha-cli"
+
+[project.scripts]
+botcha = "botcha_cli:main"

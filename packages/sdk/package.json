@@ -1,0 +1,40 @@
+{
+  "name": "@botcha/sdk",
+  "version": "0.0.1",
+  "description": "JavaScript/TypeScript SDK for Botcha — the reverse CAPTCHA for AI agents",
+  "private": false,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "botcha",
+    "captcha",
+    "reverse-captcha",
+    "ai-agent",
+    "verification",
+    "sdk"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arguedotfun/botcha-cli"
+  },
+  "homepage": "https://botcha.xyz",
+  "dependencies": {
+    "@botcha/types": "0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5"
+  }
+}

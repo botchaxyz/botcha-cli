@@ -1,0 +1,40 @@
+{
+  "name": "@botcha/cli",
+  "version": "0.0.1",
+  "description": "CLI for Botcha — the reverse CAPTCHA for AI agents",
+  "private": false,
+  "bin": {
+    "botcha": "dist/bin/botcha.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "botcha",
+    "captcha",
+    "reverse-captcha",
+    "ai-agent",
+    "verification"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arguedotfun/botcha-cli"
+  },
+  "homepage": "https://botcha.xyz",
+  "dependencies": {
+    "@botcha/types": "0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5"
+  }
+}

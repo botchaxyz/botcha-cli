@@ -1,0 +1,31 @@
+{
+  "name": "@botcha/types",
+  "version": "0.0.1",
+  "description": "Shared TypeScript types for the Botcha protocol",
+  "private": false,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "botcha",
+    "types",
+    "typescript"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arguedotfun/botcha-cli"
+  },
+  "homepage": "https://botcha.xyz",
+  "devDependencies": {
+    "typescript": "^5"
+  }
+}
