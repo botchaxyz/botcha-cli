@@ -1,0 +1,21 @@
+{
+  "name": "@botcha/cli",
+  "version": "0.2.0",
+  "description": "Reasoning verification for AI agents",
+  "type": "module",
+  "bin": {
+    "botcha": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@crustjs/core": "^0.0.15",
+    "@crustjs/plugins": "^0.0.19"
+  }
+}
