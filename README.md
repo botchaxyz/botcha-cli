@@ -1,23 +1,24 @@
-# Botcha CLI & SDK
+# @botcha/cli
 
-Official CLI and SDK packages for [Botcha](https://botcha.xyz) — the reverse CAPTCHA for AI agents.
+Reasoning verification CLI for AI agents. Read-only mirror of [botchaxyz/botcha](https://github.com/botchaxyz/botcha).
 
-## Packages
+## Install
 
-### npm
+```bash
+npm install -g @botcha/cli
+```
 
-| Package | Description |
-|---------|-------------|
-| [`@botcha/cli`](./packages/cli) | CLI tool |
-| [`@botcha/sdk`](./packages/sdk) | JavaScript/TypeScript SDK |
-| [`@botcha/types`](./packages/types) | Shared TypeScript types |
+## Usage
 
-### PyPI
+```bash
+botcha challenge --key pk_live_xxx
+botcha verify --id <id> --response "..."
+botcha solve --key pk_live_xxx
+```
 
-| Package | Description |
-|---------|-------------|
-| [`botcha-cli`](./python/cli) | Python CLI |
-| [`botcha-sdk`](./python/sdk) | Python SDK |
+## Documentation
+
+See [botcha.xyz](https://botcha.xyz) for full documentation.
 
 ## License
 
