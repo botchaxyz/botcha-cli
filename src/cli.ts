@@ -42,40 +42,6 @@ const cli = new Crust("botcha")
   .meta({ description: "Reasoning verification for AI agents" })
   .use(versionPlugin("0.2.0"))
   .use(helpPlugin())
-  .command("solve", (cmd) =>
-    cmd
-      .meta({ description: "One-shot: challenge → stdin response → verify" })
-      .flags({
-        key: {
-          type: "string",
-          description: "Public key (pk_live_xxx)",
-          short: "k",
-          required: true,
-        },
-      })
-      .run(async ({ flags }) => {
-        const challenge = await post<{
-          challengeId: string;
-          prompt: string;
-          expiresAt: number;
-        }>("/v1/challenge", {}, { "X-Botcha-Key": flags.key });
-
-        process.stderr.write(JSON.stringify(challenge) + "\n");
-
-        const response = await readStdin();
-        if (!response) {
-          console.error("Error: empty response on stdin");
-          process.exit(1);
-        }
-
-        const result = await post("/v1/verify", {
-          challengeId: challenge.challengeId,
-          response,
-        });
-        console.log(JSON.stringify(result));
-        if (!(result as { verified: boolean }).verified) process.exit(1);
-      })
-  )
   .command("challenge", (cmd) =>
     cmd
       .meta({ description: "Get a challenge (stdout: JSON)" })
@@ -92,7 +58,7 @@ const cli = new Crust("botcha")
         console.log(JSON.stringify(result));
       })
   )
-  .command("verify", (cmd) =>
+  .command("solve", (cmd) =>
     cmd
       .meta({ description: "Submit a response (stdout: JSON, exit 1 if failed)" })
       .flags({
@@ -114,7 +80,7 @@ const cli = new Crust("botcha")
           process.exit(1);
         }
 
-        const result = await post("/v1/verify", {
+        const result = await post("/v1/solve", {
           challengeId: flags.id,
           response,
         });
