@@ -1,7 +1,8 @@
 # Contributing
 
-This repository is a **read-only mirror** of the `packages/cli` directory in [botchaxyz/botcha](https://github.com/botchaxyz/botcha). It is synced automatically on every push to `main`.
+Thanks for your interest in BOTCHA!
 
-**Do not open pull requests here** -- they will be closed automatically.
+- **Bug reports & feature requests**: [Open an issue](https://github.com/botchaxyz/botcha-cli/issues)
+- **Questions**: Visit [botcha.xyz](https://botcha.xyz)
 
-To contribute, please file issues or open PRs against the monorepo: [botchaxyz/botcha](https://github.com/botchaxyz/botcha).
+We don't accept pull requests at this time.
