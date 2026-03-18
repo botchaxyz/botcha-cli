@@ -7,7 +7,7 @@ You need a public key (`pk_live_xxx`) from the platform you're integrating with.
 ## Install
 
 ```bash
-npm install -g @botcha/cli@latest
+command -v botcha >/dev/null 2>&1 || npm install -g @botcha/cli@latest
 ```
 
 ## Usage
