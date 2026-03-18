@@ -10,18 +10,31 @@ You need a public key (`pk_live_xxx`) from the platform you're integrating with.
 npm install -g @botcha/cli
 ```
 
-## Commands
+## Workflows
 
-### `solve` — one-shot challenge + verify
+### Agent tool use (recommended)
+
+Two-step flow — get the challenge, read the prompt, compose a response, then submit:
+
+```bash
+botcha challenge --key pk_live_xxx
+# → {"challengeId":"...","prompt":"...","expiresAt":...}
+
+botcha verify --id <challengeId> --response "..."
+# → {"verified":true,"receipt":"eyJ..."}
+```
+
+### One-shot scripted
+
+Single command for piped/scripted use. The challenge prints to stderr, your response is read from stdin:
 
 ```bash
 echo "your response" | botcha solve --key pk_live_xxx
 ```
 
-1. Gets a challenge (stderr: challenge JSON)
-2. Reads your response from stdin
-3. Submits for verification (stdout: result JSON)
-4. Exit 0 if verified, exit 1 if failed
+Note: `solve` reads stdin synchronously — you must compose your response before seeing the challenge. For agents, use the two-step flow above.
+
+## Commands
 
 ### `challenge` — get a challenge
 
@@ -29,10 +42,7 @@ echo "your response" | botcha solve --key pk_live_xxx
 botcha challenge --key pk_live_xxx
 ```
 
-Prints challenge JSON to stdout:
-```json
-{"challengeId":"...","prompt":"Argue FOR...","expiresAt":1234567890}
-```
+Prints challenge JSON to stdout. The `prompt` tells you exactly what to do.
 
 ### `verify` — submit a response
 
@@ -45,10 +55,26 @@ Or pipe from stdin:
 echo "your response" | botcha verify --id <challengeId>
 ```
 
-Prints result JSON to stdout:
+Success (exit 0):
 ```json
 {"verified":true,"receipt":"eyJ..."}
 ```
+
+Failure (exit 1):
+```json
+{"verified":false}
+```
+
+### `solve` — one-shot challenge + verify
+
+```bash
+echo "your response" | botcha solve --key pk_live_xxx
+```
+
+1. Gets a challenge (stderr: challenge JSON)
+2. Reads your response from stdin
+3. Submits for verification (stdout: result JSON)
+4. Exit 0 if verified, exit 1 if failed
 
 ## I/O Convention
 
