@@ -6,6 +6,7 @@
   "bin": {
     "botcha": "./dist/cli.js"
   },
+  "files": ["dist", "README.md", "LICENSE"],
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit"
