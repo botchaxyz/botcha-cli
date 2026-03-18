@@ -47,7 +47,7 @@ echo "your response" | botcha verify --id <challengeId>
 
 Prints result JSON to stdout:
 ```json
-{"verified":true,"checks":{...},"responseTime":4523,"receipt":"eyJ..."}
+{"verified":true,"receipt":"eyJ..."}
 ```
 
 ## I/O Convention
