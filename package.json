@@ -7,6 +7,10 @@
     "botcha": "./dist/cli.js"
   },
   "files": ["dist", "README.md", "LICENSE"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/botchaxyz/botcha-cli"
+  },
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit"
